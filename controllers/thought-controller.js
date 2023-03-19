@@ -4,7 +4,7 @@ const thoughtController = {
 
     getThoughts(req, res) {
         Thought.find({})
-            .then(thoughtData => res.json(thoughtData))
+            .then(Thought => res.json(Thought))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
@@ -12,7 +12,7 @@ const thoughtController = {
     },
     getThoughtByID({ params }, res) {
         Thought.findOne({ _id: params.thoughtId })
-            .then(thoughtData => res.json(thoughtData))
+            .then(Thought => res.json(Thought))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
@@ -27,8 +27,8 @@ const thoughtController = {
                     { new: true }
                 );
             })
-            .then(thoughtData => {
-                if (!thoughtData) {
+            .then(Thought => {
+                if (!Thought) {
                     res.status(404).json({ message: 'Incorrect thought data!' });
                     return;
                 }
@@ -38,8 +38,8 @@ const thoughtController = {
     },
     updateThought({ params, body }, res) {
         Thought.findByIdAndUpdate({ _id: params.thoughtId }, body, { runValidators: true, new: true })
-            .then(thoughtData => {
-                if (!thoughtData) {
+            .then(Thought => {
+                if (!Thought) {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
@@ -49,8 +49,8 @@ const thoughtController = {
     },
     deleteThought({ params }, res) {
         Thought.findByIdAndDelete({ _id: params.thoughtId }, { runValidators: true, new: true })
-            .then(thoughtData => {
-                if (!thoughtData) {
+            .then(Thought => {
+                if (!Thought) {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
@@ -64,8 +64,8 @@ const thoughtController = {
             {$push: {reactions: body}},
             { new: true, runValidators: true }
         )
-        .then(thoughtData => {
-            if (!thoughtData) {
+        .then(Thought => {
+            if (!Thought) {
                 res.status(404).json({ message: 'Incorrect reaction data!' });
                 return;
             }
@@ -79,8 +79,8 @@ const thoughtController = {
             {$pull: {reactions: {reactionId : params.reactionId}}},
             { new: true, runValidators: true }
         )
-        .then(thoughtData => {
-            if (!thoughtData) {
+        .then(Thought => {
+            if (!Thought) {
                 res.status(404).json({ message: 'Incorrect reaction data!' });
                 return;
             }
