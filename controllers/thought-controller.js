@@ -32,7 +32,7 @@ const thoughtController = {
                     res.status(404).json({ message: 'Incorrect thought data!' });
                     return;
                 }
-                res.json(dbubgiggle);
+                res.json(thoughtData);
             })
             .catch(err => res.json(err));
     },
@@ -43,7 +43,7 @@ const thoughtController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
-                res.json(dbPizzaData);
+                res.json(thoughtData);
             })
             .catch(err => res.json(err));
     },
@@ -54,7 +54,7 @@ const thoughtController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
-                res.json(dbPizzaData);
+                res.json(thoughtData);
             })
             .catch(err => res.json(err));
     },
@@ -64,12 +64,12 @@ const thoughtController = {
             {$push: {reactions: body}},
             { new: true, runValidators: true }
         )
-        .then(Thought => {
-            if (!Thought) {
+        .then(thoughtData => {
+            if (!thoughtData) {
                 res.status(404).json({ message: 'Incorrect reaction data!' });
                 return;
             }
-            res.json(dbPizzaData);
+            res.json(thoughtData);
         })
         .catch(err => res.json(err));
     },
@@ -79,12 +79,12 @@ const thoughtController = {
             {$pull: {reactions: {reactionId : params.reactionId}}},
             { new: true, runValidators: true }
         )
-        .then(Thought => {
-            if (!Thought) {
+        .then(thoughtData => {
+            if (!thoughtData) {
                 res.status(404).json({ message: 'Incorrect reaction data!' });
                 return;
             }
-            res.json(dbPizzaData);
+            res.json(thoughtData);
         })
         .catch(err => res.json(err));
     }
