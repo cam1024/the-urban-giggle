@@ -14,21 +14,18 @@ This is an API for a social network web application where users can share their 
 - [Questions ](#questions-)
 - [Credits 🙌](#credits-)
 
-## Features 📋
+## Features
 
 1. This is a social network API that uses MongoDB, a NoSQL database, which allows the website to handle large amounts of unstructured data.
 
 2. When the command to invoke the application is entered, the Mongoose models are synced to the MongoDB database.
 
-<img src="/public/assets/mongodb.png">
 
 3. When API GET routes for users and thoughts are opened in Insomnia, the data for each of the routes is displayed in formatted JSON.
 
 4. **User**, **Friend**, **Thought**, and **Reaction** routes are created to create the database and test the API on Insomnia.
 
 5. **User Routes** - a user can create a user with a username and valid email address. When created, the user is assigned a unique user ID.
-
-<img src="/public/assets/users.png">
 
 - To create a user, click the `POST` request and enter the user's username and email address. Click Send.
 
@@ -43,8 +40,6 @@ This is an API for a social network web application where users can share their 
 
 6. **Friend Routes** - a user can add a friend and delete a friend.
 
-<img src="/public/assets/friends.png">
-
 - To add a friend, click the `POST` request. On the URL enter the user ID of the user who is adding a friend, then the user ID of the friend the user is adding. \*(Note: Please see the section on Tests for the API routes.)\*
 
 - To see the user's friends, click `Find All Users`. The ID of the friends the user added are listed under `"friends"`. The `"friendCount"` indicates the number of friends the user added.
@@ -54,8 +49,6 @@ This is an API for a social network web application where users can share their 
 - To check if the friend has been removed from the user's friend list, click `Find All Users`.
 
 7. **Thought Routes** - a user can create a thought, get all thoughts or a single thought by ID, update a thought by ID, and delete a thought by ID.
-
-<img src="/public/assets/thoughts.png">
 
 - To create or add a thought, click the `POST` request. Enter the `"thoughtText"`, `"username"`, `"userID"` of the user creating the thought.
 
@@ -71,7 +64,6 @@ This is an API for a social network web application where users can share their 
 
 8. **Reaction Routes** - a user can create a reaction and delete a reaction.
 
-<img src="/public/assets/reactions.png">
 
 - To create a reaction, click the `POST` request. On the URL, enter the ID of the thought the user is reacting or commenting on. Then enter the `"reactionBody"` and `"username"` of the user creating the reaction.
 
@@ -83,9 +75,8 @@ This is an API for a social network web application where users can share their 
 
 9. MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made:
 
-   <img src="/public/assets/db1.png" width="350px"> <img src="/public/assets/db2.png" width="350px">
 
-## Installation 🗳
+## Installation 
 
 - Download or clone repository to use this application on local machine.
 - `Node.js` and `MongoDB` is required to run the application
@@ -99,7 +90,7 @@ After installation :
 - Open MongoDB and connect to the MongoDB URI `mongodb://localhost:27017`. On the list of databases, click on `socialDB` to see `thoughts` and `users` data.
 - To create seed data and test the API routes, use [Insomnia](https://insomnia.rest/download). Also, see the Tests section below.
 
-## Technologies 🔧
+## Technologies
 
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Express.js](https://expressjs.com/)
@@ -117,7 +108,7 @@ as well as the sections on Description and Usage to see how data is added and te
 
 On Insomnia, the following API routes have been created and used to add, update, or remove users, friends, thoughts, and reactions in the user's database.
 
-📁 **USER**
+**USER**
 
 - Create a new user: `POST /api/users`
 - Get all users: `GET /api/users`
@@ -127,12 +118,12 @@ On Insomnia, the following API routes have been created and used to add, update,
 
 - Delete a user by its `id`: `DELETE /api/user/:userId`
 
-📁 **FRIEND**
+**FRIEND**
 
 - Add a new friend to a user's friend list: `POST /api/users/:userid/friends/:friendId`
 - Delete a friend from a user's friend list: `DELETE /api/users/:userid/friends/:friendId`
 
-📁 **THOUGHT**
+**THOUGHT**
 
 - Create a new thought: `POST /api/thoughts/`
 - Get all thoughts: `GET /api/thoughts/`
