@@ -1,28 +1,18 @@
 # the-urban-giggle
 
-## Description 📝
+## Description 
 
 This is an API for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. It uses `Express.js` for routing, a `MongoDB` database, the `Mongoose` ODM, and `Moment.js` to format timestamps. The seed data is created using `Insomnia`.
 
 
-## Table of Contents 📖
+## Table of Contents 
 
-- [Application Preview ⭐](#application-preview-)
-- [Features 📋](#features-)
-- [Installation 🗳](#installation-)
-- [Technologies 🔧](#technologies-)
-- [Questions ❓](#questions-)
+- [Application Preview ](#application-preview-)
+- [Features ](#features-)
+- [Installation ](#installation-)
+- [Technologies ](#technologies-)
+- [Questions ](#questions-)
 - [Credits 🙌](#credits-)
-
-## Application Preview ⭐
-
-Demo Gif
-<img src="/public/assets/demo.gif" height="600px">
-
-All GET POST PUT DELETE route for Users, Thoughts, Friends, Reactions.
-<img src="/public/assets/allroutes.png" height="500px">
-
-See functionalities in Features section.
 
 ## Features 📋
 
